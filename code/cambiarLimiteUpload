@@ -1,0 +1,34 @@
+Las variables que habría que modificar para aumentar el límite serían las siguientes:
+
+upload_max_filesize = 2M
+post_max_size = 8M
+
+    upload_max_filesize: Deberás modificar 2M por el tamaño máximo deseado en MB
+    post_max_size: Deberás modificar 8M por el tamaño máximo deseado en MB + tamaño del formulario PHP (P.e.: texto del mensaje)
+
+Adicionalmente existen otros limites que también afectan al tamaño de adjunto máximo que PHP es capaz de manipular y que deberás revisar para el correcto funcionamiento de los cambios realizados:
+
+max_execution_time = 30
+memory_limit = 64M
+
+    max_execution_time = 30: Si quieres subir el límite de subida en PHP necesitarás también aumentar este valor dependiendo del máximo de bytes establecidos anteriormente
+    memory_limit = 64M: Este valor habría que subirlo también debido a que controla la memoria máxima que un script puede consumir
+
+Una vez realizados los cambios, hay que reiniciar el servicio web del Servidor en la Nube, normalmente se puede hacer con el comando:
+
+/etc/init.d/apache2 restart
+
+O bien:
+
+/etc/init.d/httpd restart
+
+En el caso de la variable memory_limit, esta debe ser mayor que la variable post_max_size.
+
+Se ha de tener en cuenta a la hora de realizar estos cambios, que la variable post_max_size debe ser mayor que upload_max_filesize.
+
+
+/*******************************************************************************/
+max_input_vars = 10000
+memory_limit = 2G
+post_max_size = 256M
+upload_max_filesize = 1G

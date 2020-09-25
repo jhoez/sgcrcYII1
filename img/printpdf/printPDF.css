@@ -1,0 +1,27 @@
+body {
+    font-family: arial;
+    font-size: 16x;
+}
+.items {
+    width:970px;
+    margin:0px auto;
+    border-collapse: collapse;
+}
+.items td {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+table thead th {
+    background-color: #EEEEEE;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.fecha {
+    text-align:center;
+}
+
+#thead, #tbody {
+    width:10%;
+    text-align:center;
+}

@@ -1,0 +1,25 @@
+<?php echo $form->checkBoxList(
+	$libros,
+		'nivel',
+		array(
+			'inicial'=>'Inicial',
+			'primaria'=>'Primaria',
+			'secundaria'=>'Secundaria',
+		),
+		array(
+			'template'=>'{input}{label}',
+			'separator'=>'',
+			'labelOptions'=>array(
+				'style'=>'
+					padding:0px 2px;
+					text-align: center;
+					line-height: 2;
+					width:65px;
+					float: left;'
+				),
+			'style'=>'float:left;',
+			'class'=>'filled-in'
+		)
+);?>
+
+<div style="clear: both;"></div>

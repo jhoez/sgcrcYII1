@@ -1,0 +1,24 @@
+<div class="row">
+	<?php $this->widget('zii.widgets.CListView', array(
+		//'cssFile' => Yii::app()->baseUrl.'/css/materialize/css/materialize.min.css',
+		'dataProvider'=>$dataProvider,
+		'itemView'=>'_view',
+		'itemsCssClass'=>'col s12',
+		'pager' => array(
+			'cssFile'=>Yii::app()->baseUrl.'/css/materialize/css/materialize.min.css',
+			'header' => '',
+			'prevPageLabel' => 'Ant',
+			'nextPageLabel' => 'Sig',
+			//'firstPageLabel'=>'Primero',
+			//'lastPageLabel'=>'Ultimo'
+		),
+		'pagerCssClass'=>'pagination',
+		//'sorterCssClass'=>'waves-effect',
+		//'summaryCssClass'=>'SOME CLASS',
+		//'emptyText'=>'U heeft nog geen deelnemers uitgenodigd.',
+		//'enablePagination'=>true,
+		//'summaryText'=>'{count} deelnemers',
+		//'template'=>'{summary}<hr />{items}<hr />{pager}',
+		//'summaryText'=>"U heeft {count} deelnemers uitgenodigd.",
+	)); ?>
+</div>

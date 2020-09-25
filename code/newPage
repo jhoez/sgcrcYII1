@@ -1,0 +1,43 @@
+<?php echo CHtml::link(
+    'Link Text',
+    array('controller/action','param1'=>'value1'), array('target'=>'_blank')
+); ?>
+
+<?php echo CHtml::link(
+    "ver libro",
+    array(
+        'libros/viewpdf',
+        'p'=>$value->idlib
+    ),
+    array('target'=>'_blank')
+); ?>
+
+<!-- pase por post -->
+<div class="row center-align">
+	<div class="s3">
+		<?php echo CHtml::link(
+            "Acta de incidencia ". $image,
+            array('/formato/descargaF'),
+            array(
+                'submit'=>array('/formato/descargaF'),
+                'params'=>array('f'=>'f1'),//no es necesario
+                //'target'=>'_blank',
+                //'id'=>'btnpdfs',
+                'class'=>'green-text'
+            )
+        );?>
+	</div>
+	<div class="s3">
+		<?php echo CHtml::link(
+            "Acta de inspección ". $image,
+            array('/formato/descargaF'),
+            array(
+                'submit'=>array('/formato/descargaF'),
+                'params'=>array('f'=>'f2'),//no es necesario
+                //'target'=>'_blank',
+                //'id'=>'btnpdfs',
+                'class'=>'green-text'
+            )
+        );?>
+	</div>
+</div>

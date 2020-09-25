@@ -1,0 +1,105 @@
+#nav-bar {
+    /*background:rgb(18, 166, 155);*/
+    margin:0px auto;
+}
+#nav {/* id de UL */
+    float:left;
+    margin:0;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+#nav-bar li {
+    position:relative;
+    display:block;
+    opacity:0;
+    cursor:pointer;
+}
+
+#nav-bar li > ul {
+    position:absolute;
+    pointer-events:none;
+}
+
+#nav-bar > ul {
+    display: flex;
+}
+
+#nav-bar > ul > li {
+    pointer-events:all;
+    opacity:1;
+}
+
+#nav-bar ul li a {
+    white-space:nowrap;
+    display: block;
+}
+
+#nav-bar li:hover > ul {
+    pointer-events:initial;
+}
+
+#nav-bar li:hover > ul > li,
+#nav-bar ul:hover > li{
+   opacity:1;
+}
+
+#nav-bar > ul > li li ul {
+   transform:translateX(100%);
+   top:0;
+   right:0;
+}
+
+/* ESTRUCTURA DE LAS ETIQUETAS "a" */
+#nav-bar a {
+    text-decoration: none;
+    background:rgb(12, 88, 161)/*rgb(18, 166, 155)*/;
+    color:#FFF;
+    transition: background 0.5s, color 0.5s, transform 0.5s;
+    margin-left:4px;
+    padding:10px 20px;
+    box-sizing:border-box;
+    border-radius:5px;
+    box-shadow: 0px 4px 6px rgb(12, 88, 161);
+    position:relative;
+}
+
+#nav-bar a:hover:before {/* zombra sobre 2do level submenu */
+    color:#fff;
+	background-color:rgba(12, 76, 138, 0.5);
+    box-shadow: 0px 4px 6px rgb(12, 76, 138);
+	transition:all 0.5s ease;
+    outline: 0;
+    content: '';
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    position:absolute;
+    border-radius:5px;
+}
+
+/* 2do level menu desaparece hacia down */
+#nav-bar > ul > li > ul > li{
+    transition: .3s, opacity 0.6s;
+    transform:translateY(150%);
+    opacity:0;
+}
+/* 2do level menu aparece desde abajo */
+#nav-bar > ul > li:hover > ul > li {
+    transform:translateY(0%);
+    opacity: 1;
+}
+
+#nav-bar > ul > li > ul > li:hover {
+    transition: .3s ease;
+    transform:translateX(4%);
+}
+
+#nav-bar:after, #nav-container:after {
+    content:"";
+    display:block;
+    clear:both;
+    overflow:hidden;
+}

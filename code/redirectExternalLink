@@ -1,0 +1,1 @@
+<?php echo CHtml::link('Link Text','http://localhost/CIATYII', array('target'=>'_blank')); ?>

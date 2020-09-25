@@ -1,0 +1,8 @@
+#Evitar acceso por navegador a una carpeta sin index
+ Options All -Indexes
+
+# Bloquear acceso al propio archivo .htaccess
+ <Files .htaccess>
+ order allow,deny
+ deny from all
+ </Files>

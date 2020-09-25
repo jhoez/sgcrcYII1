@@ -1,0 +1,13 @@
+# seguro
+Options +SymLinksIfOwnerMatch
+# no seguro
+#   Options +FollowSymLinks
+IndexIgnore */*
+
+# URL amigables
+RewriteEngine   on
+
+    RewriteCond     %{REQUEST_FILENAME} !-f
+    RewriteCond     %{REQUEST_FILENAME} !-d
+
+RewriteRule     .   index.php
